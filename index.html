@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARK FIREWORK'S - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #ff8c00;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff8c00;
+            transition: 0.5s;
+        }
+
+        .logo-img:hover {
+            transform: rotate(360deg);
+            border-color: #ff3e3e;
+        }
+
+      .logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff8c00;  /* Simple orange color */
+}
+
+       .logo-text span {
+    font-size: 1rem;
+    display: block;
+    color: #ff3e3e;  /* Simple red color */
+}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ff8c00;
+            border-bottom: 2px solid #ff8c00;
+        }
+
+        /* Hero Section */
+        /* .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            margin-top: 80px;
+        } */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+             url('https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=1600');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    margin-top: 80px;
+    position: relative;
+}
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #ff8c00;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: #ff8c00;
+            color: black;
+        }
+
+        .btn-outline {
+            border: 2px solid #ff8c00;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,140,0,0.3);
+        }
+
+        /* Services Preview */
+        .preview {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #ff8c00;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .preview-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #ff8c0033;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff8c00;
+        }
+
+        .preview-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .preview-card h3 {
+            padding: 20px 20px 10px;
+            color: #ff8c00;
+        }
+
+        .preview-card p {
+            padding: 0 20px 20px;
+            color: #ccc;
+        }
+
+        /* Stats */
+        .stats {
+            padding: 50px 5%;
+            background: linear-gradient(90deg, #ff3e3e20, #ff8c0020);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ff8c00;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 5%;
+            text-align: center;
+            border-top: 1px solid #ff8c0033;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="Image/logo.jpeg" alt="SPARK" class="logo-img">
+            <div class="logo-text">
+                SPARK7
+                <span>FIREWORK'S</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="active">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>✨ <span>SPARK</span> FIREWORK'S ✨</h1>
+            <p>Transform your events into unforgettable experiences with cutting-edge pyrotechnics, special effects, and immersive lighting solutions.</p>
+            <div>
+                <a href="contact.html" class="btn btn-primary">BOOK NOW</a>
+                <a href="services.html" class="btn btn-outline">EXPLORE SERVICES</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="preview">
+        <h2 class="section-title">🔥 <span>OUR TOP</span> SERVICES 🔥</h2>
+        <div class="preview-grid">
+            <div class="preview-card">
+                <img src="Image/AllTypesOFFireWork1.webp" alt="Concerts">
+                <h3>All Types Of FireWorks</h3>
+                <p>Complete range of aerial shells, cakes, rockets, and ground displays for any celebration.</p>
+            </div>
+            <div class="preview-card">
+                <img src="Image/coldPyro's.webp" alt="Weddings">
+                <h3>Cold Pyro's</h3>
+                <p>Safe indoor fireworks that produce spectacular sparkle effects without heat or smoke.</p>
+            </div>
+            <div class="preview-card">
+                <img src="Image/FanWheel.jpg" alt="Festivals">
+                <h3>Fan Wheel</h3>
+                <p>Spinning wheel effects that create beautiful circular patterns of sparks and light.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div>Events Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div>Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div>Support</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 SPARK7 FIREWORK'S - Illuminating Dreams</p>
+    </footer>
+</body>
+</html>

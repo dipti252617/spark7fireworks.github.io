@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARK FIREWORK'S - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10,10,10,0.95);
+            border-bottom: 2px solid #ff8c00;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #ff8c00;
+        }
+
+        .logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff8c00;  /* Simple orange color */
+}
+
+       .logo-text span {
+    font-size: 1rem;
+    display: block;
+    color: #ff3e3e;  /* Simple red color */
+}
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ff8c00;
+            border-bottom: 2px solid #ff8c00;
+        }
+
+        .page-header {
+            margin-top: 100px;
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .page-header h1 span {
+            color: #ff8c00;
+        }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 5%;
+        }
+
+        /* Business Card */
+        .business-card {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border: 2px solid #ff8c00;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(255,140,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-card::before {
+            content: '✨';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 150px;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card-header h2 {
+            font-size: 3rem;
+            color: #ff8c00;
+        }
+
+        .card-header p {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        .services-list {
+            margin: 30px 0;
+        }
+
+        .services-list h3 {
+            color: #ff8c00;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .services-grid span {
+            background: rgba(255,140,0,0.1);
+            padding: 10px 15px;
+            border-radius: 25px;
+            border-left: 3px solid #ff8c00;
+            text-align: center;
+        }
+
+        .contact-details {
+            margin: 40px 0;
+        }
+
+        .person-name {
+            font-size: 2rem;
+            color: #ff8c00;
+            margin-bottom: 20px;
+        }
+
+        .social-handle {
+            background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+        }
+
+        .phone-numbers {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .phone-item {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .phone-item a {
+            display: block;
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #ff8c00;
+            transition: 0.3s;
+        }
+
+        .phone-item a:hover {
+            background: #ff8c00;
+            color: black;
+        }
+
+        .phone-item i {
+            margin-right: 10px;
+            color: #ff8c00;
+        }
+
+        .location {
+            margin: 20px 0;
+            padding: 15px;
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .location i {
+            color: #ff8c00;
+            margin-right: 10px;
+        }
+
+        .quick-contact {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-btn, .instagram-btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 25px;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+        }
+
+        .whatsapp-btn:hover, .instagram-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            padding: 30px 5%;
+            text-align: center;
+            border-top: 1px solid #ff8c0033;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .business-card {
+                padding: 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="Image/logo.jpeg" alt="SPARK" class="logo-img">
+            <div class="logo-text">
+                SPARK7
+                <span>FIREWORK'S</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="contact.html" class="active">CONTACT</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>📞 <span>CONTACT</span> US 📞</h1>
+        <p>Get in touch for bookings and inquiries</p>
+    </div>
+
+    <div class="contact-wrapper">
+        <div class="business-card">
+            <div class="card-header">
+                <h2>💥 SPARK</h2>
+                <p>Fireworks & SFX</p>
+            </div>
+            
+            <div class="services-list">
+                <h3>✨ Our Services:</h3>
+                <div class="services-grid">
+                    <span>Cold pyro's</span>
+                    <span>Cold pyro gun</span>
+                    <span>Fan wheel</span>
+                    <span>Dry ice fog entry</span>
+                    <span>Mines, comet</span>
+                    <span>Colour day out</span>
+                    <span>Co2 jet machine</span>
+                    <span>Fire machine</span>
+                    <span>Co2 paper blaster</span>
+                    <span>Mirror entry</span>
+                    <span>Spot light</span>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <div class="person-name">Mr. Jayesh M. Gore</div>
+                
+                <div class="social-handle">
+                    <i class="fab fa-instagram"></i> @SPARK7_FIREWORK_SFX
+                </div>
+
+                <div class="phone-numbers">
+                    <div class="phone-item">
+                        <a href="tel:+918482863673">
+                            <i class="fas fa-phone-alt"></i> +91 84828 63673
+                        </a>
+                    </div>
+                    <div class="phone-item">
+                        <a href="tel:+917264842583">
+                            <i class="fas fa-phone-alt"></i> +91 72648 42583
+                        </a>
+                    </div>
+                </div>
+
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i> Natepute, Tal. Malshiras
+                </div>
+
+                <div class="quick-contact">
+                    <a href="https://wa.me/+917264842583" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Now
+                    </a>
+                    <a href="https://instagram.com/SPARK7_FIREWORK_SFX" class="instagram-btn" target="_blank">
+                        <i class="fab fa-instagram"></i> DM on Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 SPARK7 FIREWORK'S - Natepute, Tal. Malshiras</p>
+    </footer>
+</body>
+</html>

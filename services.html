@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARK FIREWORK'S - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10,10,10,0.95);
+            border-bottom: 2px solid #ff8c00;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff8c00;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff3e3e, #ff8c00);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .logo-text span {
+            font-size: 1rem;
+            display: block;
+            background: linear-gradient(45deg, #ff8c00, #ff3e3e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ff8c00;
+            border-bottom: 2px solid #ff8c00;
+        }
+
+        .page-header {
+            margin-top: 100px;
+            padding: 50px 5%;
+            text-align: center;
+            background: linear-gradient(45deg, #ff3e3e20, #ff8c0020);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .page-header h1 span {
+            color: #ff8c00;
+        }
+
+        .services-grid {
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #ff8c0033;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff8c00;
+            box-shadow: 0 20px 40px #ff8c0033;
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-image .service-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff8c00;
+            color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .service-info {
+            padding: 20px;
+        }
+
+        .service-info h3 {
+            font-size: 1.5rem;
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+
+        .service-info p {
+            color: #ccc;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .service-tags span {
+            background: rgba(255,140,0,0.1);
+            color: #ff8c00;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid #ff8c00;
+        }
+
+        .footer {
+            padding: 30px 5%;
+            text-align: center;
+            border-top: 1px solid #ff8c0033;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="Image/logo.jpeg" alt="SPARK" class="logo-img">
+            <div class="logo-text">
+                SPARK7
+                <span>FIREWORK'S</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="services.html" class="active">SERVICES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>🎆 <span>OUR COMPLETE</span> SERVICES 🎆</h1>
+        <p>All types of fireworks and SFX for every occasion</p>
+    </div>
+
+    <div class="services-grid">
+        <!-- 1. All Types of Fireworks -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/AllTypesOFFireWork1.webp" alt="Fireworks">
+                <div class="service-icon">🎆</div>
+            </div>
+            <div class="service-info">
+                <h3>All Types of Fireworks</h3>
+                <p>Complete range of aerial shells, cakes, rockets, and ground displays for any celebration.</p>
+                <div class="service-tags">
+                    <span>Aerial Shells</span>
+                    <span>Cakes</span>
+                    <span>Rockets</span>
+                    <span>Ground Displays</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Cold Pyro's -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/coldPyro's.webp" alt="Cold Pyro">
+                <div class="service-icon">❄️</div>
+            </div>
+            <div class="service-info">
+                <h3>Cold Pyro's</h3>
+                <p>Safe indoor fireworks that produce spectacular sparkle effects without heat or smoke.</p>
+                <div class="service-tags">
+                    <span>Indoor Safe</span>
+                    <span>No Smoke</span>
+                    <span>Low Heat</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Cold Pyro Gun -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/coldPyro's gun.webp" alt="Cold Pyro Gun">
+                <div class="service-icon">🔫</div>
+            </div>
+            <div class="service-info">
+                <h3>Cold Pyro Gun</h3>
+                <p>Hand-held cold spark machines perfect for stages, dance floors, and intimate celebrations.</p>
+                <div class="service-tags">
+                    <span>Hand-held</span>
+                    <span>Stage Effects</span>
+                    <span>Dance Floors</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Fan Wheel -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/FanWheel.jpg" alt="Fan Wheel">
+                <div class="service-icon">🌀</div>
+            </div>
+            <div class="service-info">
+                <h3>Fan Wheel</h3>
+                <p>Spinning wheel effects that create beautiful circular patterns of sparks and light.</p>
+                <div class="service-tags">
+                    <span>Rotating</span>
+                    <span>Circular Patterns</span>
+                    <span>Spinning Effects</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Dry Ice Fog Entry -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/DryIceFogEntry.jpg" alt="Dry Ice Fog">
+                <div class="service-icon">🌫️</div>
+            </div>
+            <div class="service-info">
+                <h3>Dry Ice Fog Entry</h3>
+                <p>Low-lying fog effects perfect for grand entrances, dance floors, and mystical atmospheres.</p>
+                <div class="service-tags">
+                    <span>Low Fog</span>
+                    <span>Grand Entry</span>
+                    <span>Dance Floor</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Mines & Comets -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/MinsCometsOut.jpg" alt="Mines & Comets">
+                <div class="service-icon">💥</div>
+            </div>
+            <div class="service-info">
+                <h3>Mines, Comets & Out</h3>
+                <p>Powerful ground mines and shooting comets that create dramatic opening effects.</p>
+                <div class="service-tags">
+                    <span>Ground Mines</span>
+                    <span>Shooting Comets</span>
+                    <span>Opening Effects</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Colour Day Out -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/Color-Day-out.webp" alt="Colour Day Out">
+                <div class="service-icon">🌈</div>
+            </div>
+            <div class="service-info">
+                <h3>Colour Day Out</h3>
+                <p>Vibrant colored smoke and fireworks perfect for daytime events and celebrations.</p>
+                <div class="service-tags">
+                    <span>Daytime</span>
+                    <span>Colored Smoke</span>
+                    <span>Vibrant</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. CO2 Jet Machine -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/Co2JetMachine.jpg" alt="CO2 Jet">
+                <div class="service-icon">⚡</div>
+            </div>
+            <div class="service-info">
+                <h3>CO2 Jet Machine</h3>
+                <p>Powerful CO2 jets that create dramatic cold blasts and clouds for high-energy moments.</p>
+                <div class="service-tags">
+                    <span>Cold Blast</span>
+                    <span>High Energy</span>
+                    <span>Dance Music</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. Fire Machine -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/FireMachine.webp" alt="Fire Machine">
+                <div class="service-icon">🔥</div>
+            </div>
+            <div class="service-info">
+                <h3>Fire Machine</h3>
+                <p>Controlled flame effects and fire jets that add heat and excitement to performances.</p>
+                <div class="service-tags">
+                    <span>Flame Jets</span>
+                    <span>Fire Effects</span>
+                    <span>Heat</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. CO2 Paper Blaster -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/Co2PaperBlaster.jpg" alt="Paper Blaster">
+                <div class="service-icon">📄</div>
+            </div>
+            <div class="service-info">
+                <h3>CO2 Paper Blaster</h3>
+                <p>Confetti and paper blasts powered by CO2 for exciting climaxes and celebrations.</p>
+                <div class="service-tags">
+                    <span>Confetti</span>
+                    <span>Paper Blast</span>
+                    <span>Climax Effects</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. Mirror Entry -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/MirrorEntry.jpg" alt="Mirror Entry">
+                <div class="service-icon">✨</div>
+            </div>
+            <div class="service-info">
+                <h3>Mirror Entry</h3>
+                <p>Stunning mirror and reflective effects for dramatic entrances and reveals.</p>
+                <div class="service-tags">
+                    <span>Dramatic Entry</span>
+                    <span>Reflective</span>
+                    <span>Reveals</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. Spot Light -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Image/SpotLight.webp" alt="Spot Light">
+                <div class="service-icon">💡</div>
+            </div>
+            <div class="service-info">
+                <h3>Spot Light</h3>
+                <p>Professional lighting solutions including moving heads, spotlights, and color washes.</p>
+                <div class="service-tags">
+                    <span>Moving Heads</span>
+                    <span>Spotlights</span>
+                    <span>Color Wash</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 SPARK7 FIREWORK'S - All types of fireworks and SFX | Natepute, Tal. Malshiras</p>
+    </footer>
+</body>
+</html>
